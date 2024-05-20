@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+<!--    a coordinator layout is used to create animations and transitions in application views-->
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:background="@color/white">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/auto_deal"
+           android:textStyle="bold"
+           android:textSize="35sp"
+           android:fontFamily="sans-serif-condensed-medium"
+           android:paddingTop="40dp"
+           android:paddingRight="20dp"
+           android:paddingLeft="20dp"/>
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="@string/best_prices_for_japan_german_and_american_cars"
+           android:textSize="15sp"
+           android:textStyle="italic"
+           android:textColor="@color/blue"
+           android:paddingBottom="10dp"
+           android:paddingLeft="20dp"
+           android:paddingRight="20dp"/>
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:textSize="15sp"
+           android:textStyle="italic"
+           android:textColor="@color/blue"
+           android:paddingBottom="20dp"
+           android:paddingLeft="20dp"
+           android:paddingRight="20dp"
+           android:id="@+id/welcome"/>
+
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           tools:listitem="@layout/singleitem"
+           android:id="@+id/recyclerView"/>
+
+   </LinearLayout>
+<!--    Frame layout will contain all the views for the bottom sheet-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/bottom_sheet_container"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        android:alpha="0.9">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="32dp"
+            android:background="@color/blue"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/welcome_to_auto_deal"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:fontFamily="sans-serif-condensed-medium"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/best_pricesamerican_cars"
+                android:textColor="@color/white"
+                android:textAlignment="center"
+                android:fontFamily="cursive"
+                android:textSize="18sp"/>
+
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Buy Now"
+                android:layout_margin="15dp"
+                android:layout_gravity="center"
+                android:id="@+id/buynow_btn"/>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="Contact Us"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/contactus_btn"/>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text="More Options"
+                android:layout_margin="5dp"
+                android:layout_gravity="center"
+                android:id="@+id/moreoptions_btn"/>
+
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
